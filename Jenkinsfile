@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker pull $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.comtaehyun-app'
+                sh 'docker pull $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/taehyun-app'
                 sh 'docker rm -f taehyun-app || true'
                 sh 'docker run -d -p "2000:80" --name taehyun-app $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/taehyun-app'
             }
